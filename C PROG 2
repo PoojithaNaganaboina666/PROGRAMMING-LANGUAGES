@@ -9,3 +9,10 @@ some of the features of c programming are:-
 > Structured proramming language
 > Machine Independent (OR) portable
 >used in low-level as well as high level applications 
+# C TOKENS
+-> IDENTIFIERS:- user defined names/ abbreviations
+-> KEYWORDS:- words which are specific to c language (not used for identifiers)
+-> CONSTANTS:- values which doesn't change
+-> STRINGS:- sequence of characters
+-> OPERATORS :- act an operands and generates output
+-> SPECIAL SYMBOLS:- used for preprocessor directives(#)
