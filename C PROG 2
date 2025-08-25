@@ -15,4 +15,4 @@ some of the features of c programming are:-
 -> CONSTANTS:- values which doesn't change
 -> STRINGS:- sequence of characters
 -> OPERATORS :- act an operands and generates output
--> SPECIAL SYMBOLS:- used for preprocessor directives(#)
+-> SPECIAL SYMBOLS:- used for preprocessor directives(#).
