@@ -1,0 +1,17 @@
+### DATA TYPES
+The datatypes Mainly divided into three types
+.....1.Primitive Datatype
+---(i)Boolean 
+---(ii)Character 
+---(iii)Integer 
+---(iv)Float
+---(v)Double
+---(vi)Void
+.....2.Derived Data type
+---(i)Array
+---(ii)Pointer
+---(iii)Reference
+.....3.User Defined Data type
+---(i)Srtucture
+---(ii)Union
+---(iii)Enum
