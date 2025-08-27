@@ -1,0 +1,9 @@
+#include <stdio.h>
+int y=50;
+void main()
+{
+    int x=100;
+    printf("\nThe value of x is %d",x);
+    printf("\nthe value of y is %d",y);
+    scanf("%d %d",&x,&y);
+}
