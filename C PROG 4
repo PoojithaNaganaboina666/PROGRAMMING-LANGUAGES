@@ -1,0 +1,21 @@
+variable:- its a  name given to a memory location where the value is not fixed, it can change with the course of time 
+example: int num,
+#syntax:
+datatype variable_name:
+#assignment:-
+variable_name=value
+## scope of a variable 
+-> scope generally speaks about the visibility of variables 
+....local variable
+....global variable
+###local variable
+void main()
+{
+int rollno=10;
+}
+###global varaiable
+int y=50;
+void main()
+{
+intx=100;
+}
