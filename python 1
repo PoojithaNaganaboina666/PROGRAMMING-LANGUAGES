@@ -1,0 +1,3 @@
+##patterns
+outer for loop indicates "no.of rows"
+inner for loop indicates "no.of columns and some how, "rows" connect with outer loop
