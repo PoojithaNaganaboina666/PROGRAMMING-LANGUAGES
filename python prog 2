@@ -13,11 +13,6 @@ class Solution(object):
         self.generate(ind+1,subset,ans, candidates, target )#not take part
                       
     def combinationSum(self, candidates, target):
-        """
-        :type candidates: List[int]
-        :type target: int
-        :rtype: List[List[int]]
-        """
         ind=0
         ans=[]
         subset=[]
