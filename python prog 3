@@ -1,0 +1,25 @@
+class Solution(object):
+    def generate(self,ind,subset,ans,candidates,target):
+        if target==0:
+            ans.append(list(subset))
+            return
+        if(target<0):
+            return
+        if(ind==len(candidates)):
+            return
+        subset.append(candidates[ind])
+        self.generate(ind+1,subset,ans,candidates,target-candidates[ind])
+        subset.pop()
+        for i in range(ind+1,len(candidates)):
+            if(candidates[ind]!=candidates[i]):
+                ind=i
+                self.generate(ind,subset,ans,candidates,target)
+                break        
+    def combinationSum2(self, candidates, target):
+        ind=0
+        ans=[]
+        subset=[]
+        candidates.sort()
+        self.generate(ind,subset,ans,candidates,target)
+        return ans
+        
