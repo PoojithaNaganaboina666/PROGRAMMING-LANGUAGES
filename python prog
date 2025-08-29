@@ -1,0 +1,19 @@
+class Solution:
+    def generate(self,ind,subset,ans,nums):
+        if(ind==len(nums)):
+            ans.append(list(subset))
+            return
+        subset.append(nums[ind])
+        self.generate(ind+1,subset,ans,nums)
+        subset.pop()
+        self.generate(ind+1,subset,ans,nums)
+    def subsets(self, nums):
+        """
+        :type nums: List[int]
+        :rtype: List[List[int]]
+        """
+        ind=0
+        ans=[]
+        subset=[]
+        self.generate(ind,subset,ans,nums)
+        return ans
