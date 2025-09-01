@@ -1,0 +1,13 @@
+class Solution(object):
+    def deleteDuplicates(self, head):
+        if not head:  # Handle the edge case of an empty list
+            return None
+        
+        current = head  # Start traversal from the head of the list
+        while current and current.next:
+            if current.val == current.next.val:  # Check for duplicate
+                current.next = current.next.next  # Skip the duplicate node
+            else:
+                current = current.next  # Move to the next distinct node
+        
+        return head  # Return the modified list
