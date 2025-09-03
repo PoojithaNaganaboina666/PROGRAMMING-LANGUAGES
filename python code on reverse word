@@ -1,0 +1,13 @@
+class Solution(object):
+    def reverseWords(self, s):
+        a=[]
+        l=0
+        r=0
+        for i in s:
+            while r<len(s) and s[r]!=' ':
+                r+=1
+            if l!=r:
+                a.append(s[l:r])
+            l=r=r+1
+        a.reverse()
+        return ' '.join(a)
