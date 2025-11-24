@@ -1,0 +1,27 @@
+class Solution(object):
+    def removeKdigits(self, num, k):
+        st = []  # Monotonic stack to build the smallest number
+        
+        for ch in num:
+            # While:
+            # 1) stack not empty
+            # 2) we still need to remove digits (k > 0)
+            # 3) last digit in stack is greater than current digit
+            # -> pop it to make number smaller
+            while st and k > 0 and st[-1] > ch:
+                st.pop()
+                k -= 1
+
+            # Push current digit
+            st.append(ch)
+
+        # If k still remains, remove from the end
+        while k > 0:
+            st.pop()
+            k -= 1
+
+        # Build final number and remove leading zeros
+        res = "".join(st).lstrip('0')
+
+        # If string becomes empty, return '0'
+        return res if res else "0"
