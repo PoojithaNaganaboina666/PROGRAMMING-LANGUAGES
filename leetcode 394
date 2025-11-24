@@ -1,0 +1,34 @@
+class Solution(object):
+    def decodeString(self, s):
+        st = []          # Stack to store (number, previous_string) before '['
+        num = 0          # Stores the number before '[' (may have multiple digits)
+        cs = ""          # Current decoded string being built
+
+        for ch in s:     # Loop through each character in the input string
+
+            if ch.isdigit():
+                # If the character is a number, update num.
+                # Multiply previous num by 10 to handle multi-digit numbers.
+                num = num * 10 + int(ch)
+
+            elif ch == '[':
+                # When '[' appears:
+                # Push current number and current string into stack
+                st.append((num, cs))
+                # Reset for building the new segment
+                num = 0
+                cs = ""
+
+            elif ch == ']':
+                # When ']' appears:
+                # Pop last saved (number, previous_string)
+                k, prev = st.pop()
+                # Build new string as: previous_string + k * current_string
+                cs = prev + k * cs
+
+            else:
+                # Normal character: append to current string
+                cs += ch
+
+        # At the end, cs contains the fully decoded string
+        return cs
