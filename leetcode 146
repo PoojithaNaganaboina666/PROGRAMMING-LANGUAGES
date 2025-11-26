@@ -1,0 +1,37 @@
+class LRUCache(object):
+
+    def __init__(self, capacity):
+        # Store maximum number of items cache can hold
+        self.capacity = capacity
+        
+        # Dictionary will store key → value in insertion order.
+        # In Python 3.7+, normal dict remembers insertion order.
+        self.cache = {}
+
+    def get(self, key):
+        # If key not present, return -1
+        if key not in self.cache:
+            return -1
+
+        # Remove the key so we can reinsert it at the end (mark as most recently used)
+        value = self.cache.pop(key)
+
+        # Reinsert key at the end → now it's the most recently used
+        self.cache[key] = value
+
+        # Return the value
+        return value
+
+    def put(self, key, value):
+        # If key already exists, remove it to update its position (MRU)
+        if key in self.cache:
+            self.cache.pop(key)
+
+        # Insert key at the end (most recently used)
+        self.cache[key] = value
+
+        # If cache size exceeds capacity, remove least recently used item
+        if len(self.cache) > self.capacity:
+            # First key in dictionary is the LRU (oldest)
+            lru = next(iter(self.cache))   # get first inserted key
+            self.cache.pop(lru)           # remove least recently used
